@@ -1,15 +1,15 @@
 {
-  "name": "meshblu-core-task-remove-subscription",
-  "version": "1.0.0",
-  "description": "Meshblu core task meshblu-core-task-remove-subscription",
+  "name": "meshblu-core-task-remove-subscriptions",
+  "version": "1.0.1",
+  "description": "Meshblu core task meshblu-core-task-remove-subscriptions",
   "keywords": [
     "meshblu",
     "core",
     "iot",
     "task"
   ],
-  "homepage": "https://github.com/octoblu/meshblu-core-task-remove-subscription",
-  "bugs": "https://github.com/octoblu/meshblu-core-task-remove-subscription/issues",
+  "homepage": "https://github.com/octoblu/meshblu-core-task-remove-subscriptions",
+  "bugs": "https://github.com/octoblu/meshblu-core-task-remove-subscriptions/issues",
   "author": {
     "name": "Octoblu",
     "url": "https://github.com/octoblu"
@@ -17,7 +17,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/octoblu/meshblu-core-task-remove-subscription.git"
+    "url": "https://github.com/octoblu/meshblu-core-task-remove-subscriptions.git"
   },
   "scripts": {
     "test": "mocha",
