@@ -1,0 +1,62 @@
+{
+  "name": "meshblu-core-task-remove-subscription",
+  "version": "1.0.0",
+  "description": "Meshblu core task meshblu-core-task-remove-subscription",
+  "keywords": [
+    "meshblu",
+    "core",
+    "iot",
+    "task"
+  ],
+  "homepage": "https://github.com/octoblu/meshblu-core-task-remove-subscription",
+  "bugs": "https://github.com/octoblu/meshblu-core-task-remove-subscription/issues",
+  "author": {
+    "name": "Octoblu",
+    "url": "https://github.com/octoblu"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/octoblu/meshblu-core-task-remove-subscription.git"
+  },
+  "scripts": {
+    "test": "mocha",
+    "coverage": "nyc npm test",
+    "mocha:json": "env NPM_ENV=test mocha --reporter json > coverage/mocha.json",
+    "test:watch": "mocha -w -R mocha-multi --reporter-options spec=-,mocha-osx-reporter=-"
+  },
+  "dependencies": {
+    "coffee-script": "^1.10.0",
+    "lodash": "^4.6.1",
+    "meshblu-core-manager-subscription": "^5.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coffee-script": "^1.10.0",
+    "meshblu-core-datastore": "^2.4.0",
+    "mocha": "^2.4.5",
+    "mocha-multi": "^0.9.1",
+    "mocha-osx-reporter": "^0.1.2",
+    "mongojs": "^2.3.0",
+    "nyc": "^8.3.0",
+    "sinon": "^1.17.3",
+    "sinon-chai": "^2.8.0"
+  },
+  "peerDependencies": {},
+  "engines": {
+    "node": ">=5.0.0",
+    "npm": ">=2.10.0"
+  },
+  "license": "MIT",
+  "nyc": {
+    "cache": true,
+    "reporter": [
+      "text-summary",
+      "lcov",
+      "json"
+    ],
+    "extension": [
+      ".coffee"
+    ]
+  }
+}

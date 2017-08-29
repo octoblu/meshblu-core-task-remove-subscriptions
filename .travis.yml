@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+- '5'
+services:
+- mongodb
+before_script:
+- npm install -g codeclimate-test-reporter
+after_script:
+- codeclimate-test-reporter < coverage/lcov.info
+deploy:
+  provider: npm
+  email: serveradmin@octoblu.com
+  api_key:
+    secure: n8OMqg1QXAib7/i6HfwOhPDpI98sk5blfbDi/zMfZGTFnOnnzPIwhpoPfkrP7vPtHuFE359/BS2n/iS+Oef9nMtUVEO7qDe8MYRURvF1tZ8tG4NNCgkJ9lkqnIcFnyMFElE2F2HTCjUcEzH12YI8sc2st4A4qLbcCxn4xV0NDqCBRTVgrs2cGBa2Bo1GoH4ne9qiGPwaTkE1jTqBNPjogTXvPBn12fZ+rAi7cs7yD/AAoMafOxeh9FHAbFQkuqhWe224gAP06NLpOtE6eqNSUVkTbWTR/wjq1UiiAQVZYTYxq+cyZn4Iw5pyX1JI097ph85P7NYjifWlFZSk7yHHG2QgS7h6AwgRm9PKFPvXCHkm4G3d/yJfxeVf5LraesgG3YtXVOXlGmMsFGpy67v0/vw2fURxbXJhsoKJvwRi4DSFIkNa6VNQSDI02MfMDfy0DgiuXkMJL+XGAVroHzqBm87d+7HFf8VrgM+qJKH3DeKSVyKE6lH1ipbpRy1MQh09YVT6CeUshQm4VBuU9IHZ5QHWd1I/XYJhTbnSIGXgnhfIZ9/OOHUveSACl+Is6nJAs/l2YJQYnx9Ar6B1j5qcUvTbZ+WuA0VOsfJXXEd0St5AkcFNreumgH0fyLZoJ9p0lMGYGMrFwP3aILOaudVl9b1ZSJXFC+3rKl7aPkQACTg=
+  on:
+    tags: true
+    branches: true
+    repo: octoblu/meshblu-core-task-remove-subscriptions
+branches:
+  only:
+  - "/^v[0-9]/"
+after_success:
+- npm run coverage
+- npm run mocha:json
+- bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.octoblu.com/bash)
